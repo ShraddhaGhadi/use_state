@@ -9,14 +9,19 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 
 function App() {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({name : "", email: ""});
   const [data, setData] = useState([]);
 
   const addData = () => {
-    debugger;
-    setData([...data, form])
-    setForm(form);
-    setForm({name:"",email:""});   
+    if(form.name === "" || form.email === ""){
+      alert("Add details");
+      console.log("iff");
+      
+    }else{
+      console.log("ehlse");
+      setData([...data, form])
+      setForm({name:"",email:""});  
+    } 
   }
 
   const remove = (index) => {
